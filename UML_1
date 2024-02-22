@@ -1,0 +1,16 @@
+@startuml
+skinparam actorStyle awesome
+left to right direction
+actor Квартиросъемщик
+actor Admin
+rectangle Система {
+Квартиросъемщик -up-> (Подобрать жилье)
+Квартиросъемщик --> (Снять жилье)
+"Владелец жилья" as Admin
+Admin -up-> (Предложить жилье)
+Admin --> (Сдать жилье)
+(Снять жилье) .> (Сдать жилье) : включает
+(Подобрать жилье) .> (Предложить жилье) : включает
+}
+skinparam packageStyle rectangle
+@enduml
